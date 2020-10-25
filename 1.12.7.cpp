@@ -13,17 +13,17 @@ int main(){
 		cin>>temp;
 		
 		if(time==m+1){
-			first=0;           //�ڴ����ˣ��Ժ��ظ��Ķ�Ҫɾȥǰ��һ�� 
+			first=0;           //内存满了，以后不重复的都要删去前面一个 
 			time=1;
 		}
 		
 		if(first==0){
-			a[ro[time]]=0;     //ɾ���ڴ��е��Ѿ����ҹ��ļ�¼ 
+			a[ro[time]]=0;     //删除内存中的已经查找过的记录 
 		}
 		
-		if(a[temp]==0){        //�ж�û�г��ֹ� 
+		if(a[temp]==0){        //判断没有出现过 
 			a[temp]=1;
-			ro[time]=temp;     //ģ���ڴ� 
+			ro[time]=temp;     //模拟内存 
 			cc++;
 			time++;
 		}
