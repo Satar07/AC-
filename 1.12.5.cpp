@@ -1,27 +1,24 @@
 #include<iostream>
 #include<cstdio>
+#include<cstring>
 using namespace std;
 
-char a[500],ep[100],c;
+char exmp[300],txt[300];
 
 int main(){
-	int first=1,time=0,cc=0,fir_time=0;
-	cin>>ep;
-	strlwr(ep);
-	getchar();
+	int cc=0,fir=1,firnum,i=0;
+	cin>>exmp;
+	cin.get();
+	strlwr(exmp);
 	do{
-		cin>>a;
-		strlwr(a);
-		if(strcmp(ep,a)==0){
-			if(first){
-				first=0;
-				fir_time=time;
-			}
+		cin>>txt;
+		strlwr(txt);
+		if(strcmp(exmp,txt)==0){
 			cc++;
+			if(fir==1)firnum=i,fir=0;
 		}
-		time++;
-		c=getchar();
-	}while(c!='\n');
-	if(cc!=0)cout<<cc<<" "<<fir_time;
-	else cout<<"-1";
+		i++;
+	}while(getchar()!='\n');
+	if(cc!=0)cout<<cc<<' '<<firnum;
+	else cout<<-1;
 }
